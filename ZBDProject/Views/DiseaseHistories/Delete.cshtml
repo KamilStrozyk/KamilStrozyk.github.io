@@ -1,0 +1,55 @@
+﻿@model ProjektBazyDanych.DiseaseHistory
+
+@{
+    ViewBag.Title = "Usuń wpis";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Usuń</h1>
+
+<h3>Czy na pewno chcesz usunąć ten wpis?</h3>
+<div>
+    <h4>Wpis w historii chorób</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.beginDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.beginDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.endDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.endDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Animal.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Animal.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Disease.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Disease.name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Usuń" class="btn btn-dark" /> |
+            @Html.ActionLink("Powrót do listy", "Index", null,new { @class = "btn " })
+        </div>
+    }
+</div>

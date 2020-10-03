@@ -1,0 +1,109 @@
+﻿@model ProjektBazyDanych.Settlement
+
+@{
+	ViewBag.Title = "Szczegóły";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Szczegóły</h1>
+
+<div>
+	<h4>Rozliczenie</h4>
+	<hr />
+	<div class="row">
+		<div class="col col-sm-6">
+			<dl class="dl-horizontal">
+
+				<dt>
+					@Html.DisplayNameFor(model => model.creationDate)
+				</dt>
+
+				<dd>
+					@Html.DisplayFor(model => model.creationDate)
+				</dd>
+
+				<dt>
+					@Html.DisplayNameFor(model => model.modificationDate)
+				</dt>
+
+				<dd>
+					@Html.DisplayFor(model => model.modificationDate)
+				</dd>
+
+				<dt>
+					@Html.DisplayNameFor(model => model.year)
+				</dt>
+
+				<dd>
+					@Html.DisplayFor(model => model.year)
+				</dd>
+
+				<dt>
+					@Html.DisplayNameFor(model => model.month)
+				</dt>
+
+				<dd>
+					@Html.DisplayFor(model => model.month)
+				</dd>
+
+				<dt>
+					@Html.DisplayNameFor(model => model.sum)
+				</dt>
+
+				<dd>
+					@Html.DisplayFor(model => model.sum)
+				</dd>
+				<dd style="display:none">
+					@Html.DisplayFor(model => model.creationDate)
+				</dd>
+
+			</dl>
+		</div>
+		<div class="col-sm-6">
+			<dt class="mb-3">
+				Dostawa dla tego rozliczenia
+			</dt>
+			<table class="table table-dark table-striped">
+				<tr>
+					<th>
+						@Html.DisplayNameFor(model => model.Shipment.Supplier.name)
+					</th>
+					<th>
+						@Html.DisplayNameFor(model => model.Shipment.shipmentDate)
+					</th>
+					<th>
+						@Html.DisplayNameFor(model => model.Shipment.amount)
+					</th>
+					<th></th>
+				</tr>
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem => Model.Shipment.Supplier.name)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => Model.Shipment.shipmentDate)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => Model.Shipment.amount)
+					</td>
+                    <td>
+                        @Html.ActionLink("Szczegóły", "Details","Shipments", new { id = Model.Shipment.id }, new { @class = "white-link" })
+                    </td>
+				</tr>
+
+
+			</table>
+
+
+		</div>
+	</div>
+</div>
+<p>
+	@Html.ActionLink("Edytuj", "Edit", new { id = Model.id.Trim() }, new { @class = "btn btn-dark" })
+	@if (Model.approved == false)
+	{
+		@Html.ActionLink("Zatwierdź", "Approve", new { id = Model.id.Trim() }, new { @class = "btn btn-dark" })
+	}
+	|
+	@Html.ActionLink("Powrót do listy", "Index", null, new { @class = "btn " })
+</p>
