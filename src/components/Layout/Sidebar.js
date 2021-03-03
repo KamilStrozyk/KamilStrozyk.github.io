@@ -2,16 +2,11 @@ import { Link } from 'react-router-dom';
 
 export function Sidebar() {
     return (
-        <div class="lg:flex flex-col lg:flex-row lg:min-h-screen lg:fixed right-0 sm:top-0 xs:w-full">
-            <div class="flex flex-col w-full md:w-64 text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800 flex-shrink-0">
-                <div class="w-full flex-shrink-0 px-8 py-4 flex flex-row items-center justify-between">
-                    <Link to="/" class="text-xl font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">Kamil Stróżyk</Link>
-                </div>
-                <nav class="flex-grow md:block md:pb-0 md:overflow-y-auto xs:hidden">
-                   
-                </nav>
+        <aside class="lg:flex flex-col lg:flex-row lg:min-h-screen lg:fixed md:w-60 mt-16  sm:top-0 xs:w-full bg-gray-100 border-r border-gray-200">
+            <div class="flex flex-col w-full  dark-mode:text-gray-200 dark-mode:bg-gray-800 flex-shrink-0 mt-4 ml-6">
+                <img src="https://avatars.githubusercontent.com/u/35404422?s=400&u=ff2aa1440945ee321f970be5e16f0b03cd4d11d6&v=4" class="rounded-full border-gray-200 border-2 object-center lg:w-4/5"></img>
             </div>
-        </div >
+        </aside >
     );
 };
 
