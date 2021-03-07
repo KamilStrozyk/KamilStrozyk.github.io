@@ -12,4 +12,9 @@
             max-width: 60px;
         }
     }
+    @variants dark {
+        .svg-white{
+            fill: #fff;
+        }
+    }
 }
