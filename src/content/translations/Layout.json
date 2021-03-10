@@ -1,0 +1,14 @@
+{
+    "pl": {
+        "Overview": "Jestem Junior .Net Developerem oraz studentem studiów II stopnia informatyki. Interesuje mnie szeroko pojęty web development oraz architektura aplikacji.",
+        "Home": "Strona główna",
+        "About": "O mnie",
+        "Contact": "Kontakt"
+    },
+    "en": {
+        "Overview": "I am a Junior .Net Developer and a second degree IT student. I am interested in web development and software architecture.",
+        "Home": "Home",
+        "About": "About",
+        "Contact": "Contact"
+    }
+}

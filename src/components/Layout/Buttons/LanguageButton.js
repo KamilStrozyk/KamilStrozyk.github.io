@@ -16,11 +16,12 @@ export class LanguageButton extends Component {
             document.body.classList.remove('pl');
         else
             document.body.classList.add('pl');
-        this.forceUpdate();
-    }
+            window.location.reload(false);
+            }
 
     render() {
         let language = window.localStorage.getItem('language');
+       
         if (language == null || language == undefined)
             language = 'en';
         return (

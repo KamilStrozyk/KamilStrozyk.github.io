@@ -1,10 +1,14 @@
 import React, { Component } from "react";
+import labelsJson from '../../../content/translations/Layout.json';
 
 export class Overview extends Component {
     render() {
+        let language = window.localStorage.getItem('language');
+        if (language == null || language == undefined)
+            language = 'en';
         return (
            <blockquote >
-            I'm junior .Net Developer and IT student at WSB. Engineer at Poznan University of Technology. There will be something about my passions etc. It's just a sample now.
+               {labelsJson[language].Overview}
            </blockquote > 
         );
     }
